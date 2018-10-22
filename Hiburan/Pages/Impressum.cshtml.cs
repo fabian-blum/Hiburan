@@ -2,7 +2,7 @@
 
 namespace Hiburan.Pages
 {
-    public class ContactModel : PageModel
+    public class ImpressumModel : PageModel
     {
         public string Message { get; set; }
 

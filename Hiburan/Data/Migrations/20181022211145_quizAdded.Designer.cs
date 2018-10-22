@@ -4,14 +4,16 @@ using Hiburan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Hiburan.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181022211145_quizAdded")]
+    partial class quizAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,10 +34,6 @@ namespace Hiburan.Data.Migrations
                     b.HasIndex("QuizId");
 
                     b.ToTable("Question");
-
-                    b.HasData(
-                        new { Id = 1, QuizId = 1 }
-                    );
                 });
 
             modelBuilder.Entity("Hiburan.Models.Quiz", b =>
@@ -47,10 +45,6 @@ namespace Hiburan.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Quizzes");
-
-                    b.HasData(
-                        new { Id = 1 }
-                    );
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
