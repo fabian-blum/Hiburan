@@ -1,0 +1,566 @@
+﻿@page
+@model GrundlagenModel
+@{
+    ViewData["Title"] = "Grundlagen";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h5 class="mt-lg-4 mb-lg-4">Grundlagen zur Programmierung</h5>
+<h5>Bevor die Lerneinheit beginnt, hast du die Möglichkeit dich in die Thematik der Programmierung einzulesen.</h5>
+
+<hr class="mt-lg-3 mb-lg-3" />
+
+<article class="text-center border border-primary border-3 rounded p-4">
+    <a href="javascript:aufklappen('title1')" class="deko-verweis">Hypertext Markup Language (HTML)</a>
+    <p>
+        <div id="title1" style="display: none">
+            <ul>
+                <h4>
+                    <li style="font-size: 20px"><u>Allgemeines:</u></li><br>
+                    - HTML-Dateien sind reine Textdateien (Encoding meist UTF-8).<br>
+                    - Die Dateierweiterung lautet html.<br>
+                    - Bietet eine Trennung von Inhalt und Struktur.<br>
+                    - Bestehen aus darzustellendem Text (Inhalt) und Strukturinformation (Markup).<br>
+                    - Werden vom Browser von unten nach oben interpretiert.<br>
+                    - Die Schrift, Farbe, Abstände etc. werden über Cascading Style Sheets (CSS) definiert.<br>
+    <p>
+        <li style="font-size: 20px"><u>Der Grundlegende Aufbau:</u></li><br>
+        - Die Grundstruktur einer Webseite besteht aus einem html-, head-, title- und body-tag.<br>
+        - Der html-tag umschließt den gesammten Programmierquellcode.<br>
+        - Der head-tag definiert einen Bereich, der Metadaten beinhaltet.<br>
+        - Der body-tag enthält den gesamten zusehenden Seiteninhalt.<br>
+    <p>
+        <div id="htmlbeispiel1"><img src="/images/Grundlagen/htmlbeispiel1.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Die Strukturierung einer Webseite:</u></li><br>
+        - Der p-Tag dient der Strukturierung von Text in Absätzen.<br>
+        - Der span-Tag dient dazu um mit Hilfe von Cascading Style Sheets (CSS) formatiert zu werden.<br>
+        - Kommentare sind nur für den Programmierer sichtbar und können überall verwendet werden.<br>
+    <p>
+        <div id="htmlbeispiel2"><img src="/images/Grundlagen/htmlbeispiel2.jpg"></div>
+    <p>
+        - Der section-Tag definiert einen Abschnitt in einem Dokument.<br>
+        - Der div-Tag ist ein unspezifisches Element zur Strukturierung einer Webseite.<br>
+        - Der hr-Tag wird eingesetzt um eine horizontale Linie zu zeichnen.<br>
+    <p>
+        <div id="htmlbeispiel6"><img src="/images/Grundlagen/htmlbeispiel6.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Die Semantische Strukturierung einer Webseite:</u></li><br>
+        - Der main-Tag stellt den Hauptteil einer Webseite dar, darf nur einmal pro Seite erfolgen.<br>
+        - Der main-Tag darf nicht innerhalb von dem article-, aside-, footer-, header- oder nav-Tag verwendet werden.<br>
+    <p>
+        <div id="htmlbeispiel3"><img src="/images/Grundlagen/htmlbeispiel3.jpg"></div>
+    <p>
+        - Der article-Tag beinhaltet einen thematischen sowie inhaltlichen eigenständigen Content.<br>
+        - Der header-Tag umfasst einen einleitenden Inhalt oder einen Navigationbereich.<br>
+        - Der footer-Tag veranschaulicht das Ende für Informationen (z. B. Autor oder Copyright).<br>
+    <p>
+        <div id="htmlbeispiel4"><img src="/images/Grundlagen/htmlbeispiel4.jpg"></div>
+    <p>
+        - Der aside-Tag enthält Content, der über dem übergeordneten Element angezeigt werden soll.<br>
+        <div id="htmlbeispiel5"><img src="/images/Grundlagen/htmlbeispiel5.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Textstruktur mit Umbrüchen:</u></li><br>
+        - Der br-Tag erzeugt einen Zeilenumbruch.<br>
+        - Der wbr-Tag ist ein optimaler Worttrenner.<br>
+    <p>
+        <div id="htmlbeispiel7"><img src="/images/Grundlagen/htmlbeispiel7.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Textformatierung mit Überschriften:</u></li><br>
+        - Der h1- bis h6-Tag stellen Überschriften in unterschiedlichen Größen dar.<br>
+        - Vom h1- bis h6-Tag nimmt die Größe der Überschrift ab.<br>
+    <p>
+        <div id="htmlbeispiel8"><img src="/images/Grundlagen/htmlbeispiel8.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Textformatierung - direkte Formatierung:</u></li><br>
+        - Der b-Tag stellt den Text fett dar.<br>
+        - Der i-Tag zeigt den Text kursiv an.<br>
+        - Der u-Tag unterstreicht den Text.<br>
+        - Der s-Tag durchstreicht den Text.<br>
+        - Der mark-Tag stellt den Text gelb markiert dar.<br>
+    <p>
+        <div id="htmlbeispiel9"><img src="/images/Grundlagen/htmlbeispiel9.jpg"></div>
+    <p>
+        - Der sup-Tag stellt den Text hochgestellt dar.<br>
+        - Der sub-Tag stellt den Text tiefgestellt dar.<br>
+        - Der small-Tag stellt den Text in kleiner Schrift dar.<br>
+        - Der dir-Tag schreibt den Text in umgekehrte Schreibrichtung von links nach rechts oder von rechts nach links (ltr oder rtl).<br>
+    <p>
+        <div id="htmlbeispiel10"><img src="/images/Grundlagen/htmlbeispiel10.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Textformatierung - semantische Formatierung:</u></li><br>
+        - Der em-Tag stellt den Text kursiv dar.<br>
+        - Der strong-Tag veranschaulicht den Text in fett.<br>
+        - Der del-Tag streicht den Text durch.<br>
+        - Der ins-Tag unterstreicht den Text.<br>
+        - Der abbr-Tag repräsentiert eine Abkürzung.<br>
+        - Der blockquote-Tag stellt ein langes Zitat dar.<br>
+        - Der q-Tag stellt ein kurzes Zitat in Hochkommata dar.<br>
+        - Der adress-Tag wird für Adressinformationen genutzt.<br>
+        - Der code-Tag represäntiert ein Fragment für Computercode.<br>
+        - Der pre-Tag ist ein Block-Tag.<br>
+        - Der kbd- und samp-Tag kennzeichnen einen kurzen Text.<br>
+        - Der time-Tag wird bei Zeitangaben genutzt.<br>
+        - Der var-Tag repräsentiert eine Variable.<br>
+    <p>
+        <div id="htmlbeispiel11"><img src="/images/Grundlagen/htmlbeispiel11.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Listen:</u></li><br>
+        - Es wird zwischen geordnete (nummerierte) und ungeordnete Listen unterschieden.<br>
+        - Der li-Tag wird in beiden Listen verwendet.<br>
+        - Der dl-Tag definiert eine Beschreibungsliste und enthält die Elemente dt sowie Beschreibungen dd.<br>
+    <p>
+        <div id="htmlbeispiel12"><img src="/images/Grundlagen/htmlbeispiel12.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Verweise / Links:</u></li><br>
+        - Links verweisen auf andere Webseiten (auf dem gleichen oder anderen Webservern) oder auf Bereiche innerhalb derselben Webseite (interner Link).<br>
+        - Das Attribut target steuert, wo der Link geöffnet wird.<br>
+        - Wenn der Verweis in einem neuen Fenster geöffnet werden soll, weist man bei target den Wert _blank zu.<br>
+        - Weitere Wertzuweisunegn an target= sind _self, _parent und _top.<br>
+        - Mit _self wird der Verweis im aktuellen Fenster geöffnet.<br>
+        - Mit _parent kann man bei verschachtelten Framesets das aktuelle Frameset sprengen.<br>
+        - Mit _top kann man bei verschachtelten Framesets alle Frameset sprengen und ein beliebiger Fenstername, der in einem Frameset definiert ist.<br>
+    <p>
+        <div id="htmlbeispiel13"><img src="/images/Grundlagen/htmlbeispiel13.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Verweise / Links - besondere Verweise:</u></li><br>
+        - href="mailto: führt das Standardmailprogramm aus.<br>
+        - href="javascript führt eine JavaScript-Funktion aus.<br>
+    <p>
+        <div id="htmlbeispiel14"><img src="/images/Grundlagen/htmlbeispiel14.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Bilder:</u></li><br>
+        - Mit dem img-Tag können Bilder aus verschiedenen Quellen eingebunden werden.<br>
+        - Die Angabe der Breite ist mit width und die Höhe mit height möglich.<br>
+        - Das Attribut title definiert einen Bildtitel.<br>
+        - Das Attribut alt definiert einen alternative angezeigten Text für den Fall, dass das Bild nicht geladen werden kann.<br>
+    <p>
+        <div id="htmlbeispiel15"><img src="/images/Grundlagen/htmlbeispiel15.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Weitere Medienelemente:</u></li><br>
+        - Mit dem canvas-Tag wird ein Grafikbereich dargestellt.<br>
+        - Mit dem audio- und video-Tag werden Audio- und Videofiles gekennzeichnet.<br>
+        - Mit dem source-Tag können verschiedene Quellen und Formate alternativ angegeben werden.<br>
+        - Der track-Tag liefert weitere Informationen zum Audio oder Videofile (z. B. Beschreibungen).<br>
+    <p>
+        <div id="htmlbeispiel16"><img src="/images/Grundlagen/htmlbeispiel16.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Tabellen - Grundstruktur:</u></li><br>
+        - Der caption-Tag enthält die Überschrift einer Tabelle.<br>
+        - Der table-Tag repräsentiert Daten in zwei oder mehr Dimensionen.<br>
+        - Der tr-Tag definiert eine Reihe , die aus einzelnen Zellen in einer Tabelle besteht.<br>
+        - Der th- und td-Tag definieren einzelne Zellen in einer Tabelle.<br>
+    <p>
+        <div id="htmlbeispiel17"><img src="/images/Grundlagen/htmlbeispiel17.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Tabellen - Header, Body und Fuß:</u></li><br>
+        - Der thead-, tbody- und tfoot-Tag dienen der logischen Gruppierung von Daten.<br>
+        - Gruppen können durch CSS spezifiziert werden.<br>
+    <p>
+        <div id="htmlbeispiel18"><img src="/images/Grundlagen/htmlbeispiel18.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Tabellen - Spalten gruppieren:</u></li><br>
+        - Innerhalb vom colgroup-Tag werden Gruppen von Spalten definiert.<br>
+        - Der col-Tag spezifiziert die Eigenschaften der Gruppen.</br>
+    <p>
+        <div id="htmlbeispiel19"><img src="/images/Grundlagen/htmlbeispiel19.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare:</u></li><br>
+        - Formulare ermöglichen die Dateneingabe in eine Webseite.<br>
+        - Beispiele für Formulare sind Kontaktformulare, Loginformulare.<br>
+        - Die eingegebenen Daten können mit unterschiedlichen Verfahren bearbeitet werden.<br>
+        - Der form-Tag definiert ein Formular.<br>
+        - Das Attribut action ist das Ziel-URL für die Formulardaten.<br>
+        - Das Attribut method ist die HTTP-Request-Methode (meinstens GET oder POST).<br>
+        - Das Attribut enctype definiert, wie die Daten kodiert werden.<br>
+        - Beim Attribut target kann das Zielfenster für die Antwort des Webservers angegeben werden.<br>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Einzeiliges Eingabefeld:</u></li><br>
+        - Der input-Tag definiert ein einzeiliges Eingabefeld.<br>
+        - Das Attribut type definiert den Typ.<br>
+        - Attribut name ist der Bezeichnername für das Feld.<br>
+        - Das Attribut size ist für die Länge des Feldes in Zeichen dar.<br>
+        - Das Attribut maxlength wird für die Maximale Länge der Eingabe verwendet.<br>
+        - Mit dem Attribut value kann man für die Texteingabe-Elemente einen vordefinierten Wert vorgeben.<br>
+    <p>
+        <div id="htmlbeispiel20"><img src="/images/Grundlagen/htmlbeispiel20.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Einzeiliges und mehrzeiliges Eingabefeld:</u></li><br>
+        - Das Attribut type erlaubt verschiedene Werte (text, password, file, submit, reset, button).<br>
+        - Der textarea-Tag definiert ein mehrzeiliges Eingabefeld.<br>
+        - Mit dem Attribut cols gibt man die Anzahl der Spalten an.<br>
+        - Mit dem Attribut rows gibt man die Anzahl der Zeilen an.<br>
+        - Das Attribut maxlength gibt die Maximale Länge der Eingabe an.<br>
+    <p>
+        <div id="htmlbeispiel21"><img src="/images/Grundlagen/htmlbeispiel21.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Vorschlagsliste für input-Elemente:</u></li><br>
+        - Der datalist-Tag bietet eine Vorschlagsliste für Eingabefelder.<br>
+        - Das Attribut id wird für die ID der Liste verwendet.<br>
+        - Mit dem option-Tag werden die einzelnen Optionen definiert.<br>
+        - Die Verknüpfung zwischen dem input- und datalist-Tag erfolgt über das Attribut list="[listid]".<br>
+    <p>
+        <div id="htmlbeispiel22"><img src="/images/Grundlagen/htmlbeispiel22.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Schaltflächen / Buttons:</u></li><br>
+        - Für Formulare können verschiedene Buttons verwendet werden.<br>
+        - Submit wird für einen Button zum Absenden der Daten an form action verwendet.<br>
+        - Reset wird für einen Button zum Zurücksetzen der Formulardaten genutzt.<br>
+        - Das Attribut value überschreibt Standardbeschriftungen des Buttons.<br>
+        <div id="htmlbeispiel23"><img src="/images/Grundlagen/htmlbeispiel23.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Radiobuttons:</u></li><br>
+        - Radiobuttons nutzen den input-Tag mit type="radio".<br>
+        - Radiobuttons erlauben nur eine Auswahl.<br>
+        - Das Attribut value definiert den Auswahlwert.<br>
+        - Das Attribut checked definiert die Standardauswahl.<br>
+        - Das Attribut disabled ist nicht auswählbar.<br>
+        - Der label-Tag vereinfacht die Bedienung des Radiobuttons durch Vergrößerung des Klick-Bereichs.<br>
+    <p>
+        <div id="htmlbeispiel24"><img src="/images/Grundlagen/htmlbeispiel24.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Checkboxen:</u></li><br>
+        - Checkboxen verwenden den input-Tag mit type="checkbox".<br>
+        - Checkboxen erlauben beliebig viele Auswahlmöglichkeiten.<br>
+        - Das Attribut value definiert den Auswahlwert.<br>
+        - Das Attribut checked definiert die Standardauswahl.<br>
+        - Das Attribut disabled ist nicht auswählbar.<br>
+        - Der label-Tag vereinfacht die Bedienung der Checkbox durch Vergrößerung des Klick-Bereichs.<br>
+    <p>
+        <div id="htmlbeispiel25"><img src="/images/Grundlagen/htmlbeispiel25.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Auswahlliste / Dropdown-Liste:</u></li><br>
+        - Die Liste wird mit dem select-Tag definiert.<br>
+        - Das Attribut name ist ein Bezeichnername für das Feld.<br>
+        - Das Attribut size gibt die Anzahl der angezeigten Einträge an.<br>
+        - Das Attribut multiple erlaubt eine Mehrfachselektion.<br>
+        - Der option-Tag stellt einen Eintrag für die Liste dar.<br>
+        - Das Attribut value definiert den Auswahlwert.<br>
+        - Das Attribut selected definiert die Standardauswahl.<br>
+    <p>
+        <div id="htmlbeispiel26"><img src="/images/Grundlagen/htmlbeispiel26.jpg"></div>
+
+    <p>
+        - Der optgroup-Tag erlaubt die Gruppierung von Optionen.<br>
+        - Das Attribut label ist der Anzeigename der Gruppe.<br>
+        - Gruppierte Elemente werden automatisch eingerückt.<br>
+    <p>
+        <div id="htmlbeispiel27"><img src="/images/Grundlagen/htmlbeispiel27.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Fortschrittsanzeige und Balken:</u></li><br>
+        - Mit dem progress-Tag werden Fortschrittsbalken dargestellt.<br>
+        - Das Attribut value zeigt den aktuellen Wert an.<br>
+        - Das Attribut max zeogt den maximalen Wert an.<br>
+        - Der meter-Tag erlaubt nummerische Werte als Balken visuell darzustellen.<br>
+        - Das Attribut value zeigt den aktuellen Wert an.<br>
+        - Das Attribut max zeogt den maximalen Wert an.<br>
+        - Die Attribute low, high, optimum den optimalen Wert.<br>
+    <p>
+        <div id="htmlbeispiel28"><img src="/images/Grundlagen/htmlbeispiel28.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Formulare - Formulare organisieren:</u></li><br>
+        - Der fieldset-Tag erlaubt es Formularelemente zu gruppieren.<br>
+        - Der legend-Tag beinhaltet die Beschriftung der Gruppe.<br>
+        - Das Attribut tabindes legt die Tabulator-Reihenfolge fest.<br>
+        - Das Attribut accesskey legt das Shortcut fest.<br>
+    <p>
+        <div id="htmlbeispiel29"><img src="/images/Grundlagen/htmlbeispiel29.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>HTML Header - Titel, Basis URL:</u></li><br>
+        - Der title-Tag ist ein Pflichtelement, das einmal vorkommt und enthält den Titel der Webseite.<br>
+        - Der base-Tag definiert die Basis(-URL) für alle relativen Verweise innerhalb der Domain.<br>
+    <p>
+        <li style="font-size: 20px"><u>HTML Header - Style, Script, Ressourcen:</u></li><br>
+        - Mit dem link-Tag werden externe Ressourcen eingebunden.<br>
+        - Das Attribut rel beschreibt den Typ.<br>
+        - Das Attribut href beschreibt die URL.<br>
+        - Der style-Tag beinhaltet Cascading Style Sheets (CSS) Spezifikationen.<br>
+        - Der script-Tag kann den JavaScript-Code direkt enthalten oder auf externe Dateien verweisen.<br>
+    <p>
+        <li style="font-size: 20px"><u>HTML Header - Metainformationen:</u></li><br>
+    <p>
+        <div id="htmlbeispiel30"><img src="/images/Grundlagen/htmlbeispiel30.jpg"></div>
+        </h4>
+        </ul>
+        </div>
+        <a href="javascript:aufklappen('title2')" class="deko-verweis">Cascading Style Sheets (CSS)</a>
+    <p>
+        <div id="title2" style="display: none">
+            <ul>
+                <h4>
+                    <li style="font-size: 20px"><u>Allgemeines:</u></li><br>
+                    - Definiert das Visual Design und modifiziert dadurch das HTML Standardlayout.<br>
+                    - Die Gestaltungsregeln beschreiben die Position, Farbe, Größe, uvm. von Elementen.<br>
+                    - Jede Regeln besitzt die Form: Selektor {Eigenschaft : Wert;}.<br>
+    <p>
+        <div id="cssbeispiel1"><img src="/images/Grundlagen/cssbeispiel1.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Integration in HTML:</u></li><br>
+        - Bei einer internen Datei wird der style-Tag geöffnet.<br>
+        - Externe CSS-Datei wird wie folgt eingebunden: <div id="cssbeispiel2"><img src="/images/Grundlagen/cssbeispiel2.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Funktion des Selektors:</u></li><br>
+        - Selektor bestimmt, für welche Elemente die folgende Deklaration gilt.<br>
+        - Es wird zwischen dem Universalselektor *, Typselektor typ, Klassenselektor .class, ID-Selektor #ID und Attributselektor [attr] unterschieden.<br>
+    <p>
+        <div id="cssbeispiel3"><img src="/images/Grundlagen/cssbeispiel3.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Schrifteigenschaften:</u></li><br>
+        - font-family legt die gewünschte Schriftart fest.<br>
+        - font-size definiert die Schriftgröße.<br>
+        - font-style legt den Style der Schrift fest (z. B. kursiv).<br>
+        - font-weight zeigt die Schrift dick an.<br>
+        - text-align richtet die Schrift aus.<br>
+        - text-decoration definiert Linien entlang des Textes.<br>
+        - text-decoration-color bestimmt die Farbe der Linie.<br>
+        - text-decoration-style legt Linienart fest.<br>
+        - text-shadow: definiert einen Textschatten.<br>
+    <p>
+        <li style="font-size: 20px"><u>Box Model:</u></li><br>
+        - Jedes Element nimmt einen bestimmten Platz ein.<br>
+        - Elemente haben ein Standardverhalten.<br>
+        - Block-Elemente sind z. B. p-, h1, div-Tag.<br>
+        - Block-Elemente besitzen immer einen Inhaltsbereich (content), Innenabstand (padding), Rahmen (border) und Außenabstand (margin).<br>
+        - Inline-Elemente sind z.B b-, span-Tag.<br>
+        - Das Standardverhalten kann durch die Eigenschaft display verändert werden (display: block; oder display: line;).<br>
+    <p>
+        <li style="font-size: 20px"><u>Abstände und Rahmen:</u></li><br>
+        - Beim Innenabstand padding ist die Hintergrundfarbe identisch mit dem Inhaltsbereich und die Breite ist anpassbar.<br>
+        - Beim Außenabstand margin ist die Hintergrundfarbe immer transparent und die Breite anpassbar.<br>
+        - Beim Rahmen border ist die Farbe, Breite und der Stil anpassbar.<br>
+        - Für padding, margin und border gibt es folgende Sonderformen: -top, -bottom, -left, -right.<br>
+        - Mit border-radius werden die Ecken der Box abgerundet.<br>
+    <p>
+        <li style="font-size: 20px"><u>Übergroßer Inhalt:</u></li><br>
+        - Die Darstellung von übergroßem Inhalt kann mit overflow gesteuert werden.<br>
+        - Mit visible ragt aus dem Element der Inhalt heraus.<br>
+        - Mit hidden wird der Inhalt abgeschnitten.<br>
+        - Mit scroll wird immer ein Scrollbalken angezeigt.<br>
+        - Mit auto wird ein Scrollbalken bei Bedarf angezeigt.<br>
+    <p>
+        <div id="cssbeispie14"><img src="/images/Grundlagen/cssbeispiel4.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Positionierung und Reihenfolge (Vorder- und Hintergrund:</u></li><br>
+        - Position kennt folgende vier Ausprägungen: static, relative, absolute und fixed.<br>
+        - Positionen können mit top, left, bottom und right angegeben werden.<br>
+        - float nimmt Elemente aus dem Fluss heraus und positioniert sie neben die Nachfolger.<br>
+        - Der z-index definiert die Reihenfolge in der Tiefe (z-Achse).<br>
+    <p>
+        <div id="cssbeispie15"><img src="/images/Grundlagen/cssbeispiel5.jpg"></div>
+        </h4>
+        </ul>
+        </div>
+        <a href="javascript:aufklappen('title3')" class="deko-verweis">JavaScript (JS)</a>
+    <p>
+        <div id="title3" style="display: none">
+            <ul>
+                <h4>
+                    <li style="font-size: 20px"><u>Allgemeines:</u></li><br>
+                    - Eine im Browser integrierte Interpretersprache.<br>
+                    - Besteht aus reinem Text.<br>
+                    - Wird direkt nach dem Laden vom Browser interpretiert und ausgeführt.<br>
+                    - Hat eine ähnliche Syntax wie Java.<br>
+                    - Typische Anwendungsfälle sind das Hinzufügen sowie Entfernen von HTML-Elementen, auf Events reagieren, Benutzereingaben validieren Browser-Versionen ermitteln Daten persistieren (z. B. Cookie, Local Storage) und asynchrone Anfragen an einen Server senden.<br>
+    <p>
+        <li style="font-size: 20px"><u>Syntax:</u></li><br>
+        - Es werden Unicode-Zeichensätze verwendet.<br>
+        - Anweisungen werden über ein Semikolon getrennt.<br>
+        - Zeichenketten werden in “ “ oder ‘ ‘ gesetzt.<br>
+        - Kommentare können einzeilig mit // oder mehrzeilig mit /* */ sein.<br>
+    <p>
+        <li style="font-size: 20px"><u>Primitive Typen und Objekte:</u></li><br>
+        - In JavaScript wird zwischen primitive Typen und Objekttypen unterschieden.<br>
+        - Ein Primitiver Typ ist eine Zahl (number), Zeichenkette (string), Wahrheitswert (boolean) sowie undefined und null.<br>
+        - Ein Objekt ist eine Sammlung von Eigenschaften (Name und Wert) und kann Methoden zur Verfügung stellen.<br>
+        - Funktionen werden als Objekttyp mit ausführbarem Code betrachtet.<br>
+    <p>
+        <li style="font-size: 20px"><u>Boolsche Werte, Strings:</u></li><br>
+        - Boolesche Werte stellen Wahrheitswerte dar mit true oder false.<br>
+        - Strings werden wie Objekte mit Eigenschaften und Methoden benutzt (z. B. length, substr(), indexOf()).
+    <p>
+        <li style="font-size: 20px"><u>Funktionen:</u></li><br>
+        - Ist eine Folge von Anweisungen (Sequenz) und kann unter einem Funktionsnamen zusammengefasst werden.<br>
+        - Der Funktionsname kann als Anweisung verwendet werden.<br>
+        - Optional können Argumente übergeben werden.<br>
+        - Eine Funktion kann einen Rückgabewert liefern oder einer Variable zugewiesen werden.<br>
+    <p>
+        <div id="jsbeispie1"><img src="/images/Grundlagen/jsbeispiel1.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Objekte:</u></li><br>
+        - Objekte sind komplexe Variablen mit Eigenschaften und Methoden.<br>
+        - Der Zugriff auf Eigenschaften und Methoden erfolgt per Punkt oder Indexnotation.<br>
+        - Eine Abfrage und Änderung der Eigenschaften ist möglich.<br>
+    <p>
+        <div id="jsbeispie2"><img src="/images/Grundlagen/jsbeispiel2.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Konstruktoren:</u></li><br>
+        - Ein Konstruktor wird wie eine Funktion verwendet.<br>
+        - Ein Zugriff auf Eigenschaften und Methoden erfolgt mit einem Punkt oder einer Indexnotation.<br>
+        - Bei bestehenden Instanzen können Eigenschaften hinzugefügt oder entfernt werden.<br>
+    <p>
+        <div id="jsbeispie3"><img src="/images/Grundlagen/jsbeispiel3.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Klassen:</u></li><br>
+        - Um Klassen verwenden zu können, sollte der strict-Modus aktiviert werden.<br>
+        - Bei einer Klasse wird eine constructor-Methode innerhalb der Klasse definiert.<br>
+        - Der Zugriff auf Eigenschaften und Methoden erfolgt mit einer Punktnotation.<br>
+    <p>
+        <div id="jsbeispie4"><img src="/images/Grundlagen/jsbeispiel4.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Arrays:</u></li><br>
+        - Die Nutzung von Arrays ist sinnvoll, wenn mehrere Werte in Variablen gespeichert werden, auf die eventuell in Schleifen zugegriffen werden soll.<br>
+        - Sie vereinfachen den Gebrauch bei größerer Anzahl von Werten.<br>
+        - Jeder Wert wird als Element bezeichnet und besitzt eine nummerische Position.<br>
+        - Das erste Element im Array steht an Position 0.<br>
+        - Ein Element kann von einem beliebigen Typ sein.<br>
+        - Es gibt für Arrays mehrere Methoden zum Hinzufügen, Entfernen, Wertänderung und Zugriff von Elementen.<br>
+    <p>
+        <div id="jsbeispie5"><img src="/images/Grundlagen/jsbeispiel5.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Schleifen:</u></li><br>
+        - Schleifen finden ihren Einsatz, wenn Programmierquellcode mehrfach ausgeführt werden soll.<br>
+        - Es gibt folgende vier Schleifentypen: kopfgesteuerte for-Schleife, kopfgesteuerte while-Schleife, fußgesteuerte do-while-Schleife und for/in-Schleife.<br>
+        - Mit break kann die Schleife vorzeitig beendet werden.<br>
+        - Mit continue kann der aktuelle Schleifendurchlauf beendet werden und beginnt wieder von Anfang.<br>
+    <p>
+        <li style="font-size: 20px"><u>Window-Objekt:</u></li><br>
+        - Nach dem Laden und Interpretieren stellt der Browser automatisch verschiedene Objekte zur Verfügung.<br>
+        - Das Window-Objekt (global) repäsentiert das Browser-Fenster.<br>
+        - Methoden des Window-Objekt sind: alert(), setTimeout(), setInterval(), location und history.<br>
+        - alert() zeigt Nachrichten als Dialog an.<br>
+        - setTimeout() führt eine Funktion nach n Millisekunden aus.<br>
+        - setInterval() führt eine Funktion nach alle n Millisekunden aus.<br>
+        - location repräsentiert die URL der aktuellen Seite.<br>
+        - Mit replace() und asign() können neue Seiten geladen werden.<br>
+        - history stellt eine Liste der besuchten Seiten dar.<br>
+        </h4>
+        </ul>
+        </div>
+        <a href="javascript:aufklappen('title4')" class="deko-verweis">PHP: Hypertext Preprocessor (PHP)</a>
+    <p>
+        <div id="title4" style="display: none">
+            <ul>
+                <h4>
+                    <li style="font-size: 20px"><u>Allgemeines:</u></li><br>
+                    - Ist ein Akronym für PHP: Hypertext Preprocessor<br>
+                    - Ist eine weit verbreitete Open-Source-Skriptsprache.<br>
+                    - PHP-Skripte werden auf dem Server ausgeführt.<br>
+                    - PHP-Dateien haben die Erweiterung ".php".<br>
+                    - PHP-Dateien können Text-, HTML-, CSS-, JavaScript- und PHP-Code enthalten.<br>
+                    - PHP-Quellcode wird auf dem Server ausgeführt und das Ergebnis wird als HTML-Quellcode an den Browser zurückgegeben.<br>
+                    - PHP kann dynamischen Seiteninhalt generieren, Dateien auf dem Server erstellen, öffnen, lesen, schreiben, löschen sowie schließen, Formulardaten sammeln, Cookies senden sowie empfangen, Daten in einer Datenbank hinzufügen, löschen, ändern oder verschlüsseln, kann HTML, Bilder, PDF-Dateien und Flash-Filme ausgeben.<br>
+    <p>
+    <p>
+        <li style="font-size: 20px"><u>Grundlegende PHP-Syntax:</u></li><br>
+        - Eine PHP-Datei enthält HTML-Tags und PHP-Skriptcode.<br>
+        - PHP-Anweisungen enden mit einem Semikolon.<br>
+        - Im Folgenden wird Hello World! ausgegeben:<br>
+    <p>
+        <div id="phpbeispiel1"><img src="/images/Grundlagen/phpbeispiel1.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Kommentare:</u></li><br>
+        - Sind nur für den Leser sichtbar und werden nicht ausgeführt.<br>
+        - Werden verwendet um zu beschreiben was der Quellcode macht.<br>
+        - Ein Einzeiliger Kommentar sieht wie folgt aus: // oder #<br>
+        - Ein Mehrzeiliger Kommentar sieht wie folgt aus: /* */<br>
+    <p>
+    <p>
+        <li style="font-size: 20px"><u>PHP Case Sensitivität:</u></li><br>
+        - Eine PHP-Datei enthält HTML-Tags und PHP-Skriptcode.<br>
+        - In PHP wird bei Schlüsselwörtern (echo, if, else, while usw.), Klassen, Funktionen und benutzerdefinierten Funktionen nicht zwischen Groß- und Kleinschreibung unterschieden.<br>
+        - Im Folgenden wird echo unterschiedlich geschrieben und es wird trotzdem Hello World! ausgegeben:<br>
+    <p>
+        <div id="phpbeispiel2"><img src="/images/Grundlagen/phpbeispiel2.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Variablen:</u></li><br>
+        - Eine Variable beginnt mit $, gefolgt vom  Variablennamen.<br>
+        - Wenn einer Variablen einen Textwert zugewiesen wird, wird der Wert in Anführungszeichen gesetzt.<br>
+        - Bei Variablennamen wird zwischen Groß- und Kleinschreibung unterschieden ($color und $COLOR sind zwei verschiedene Variablen).<br>
+        - Ein Variablenname muss mit einem Buchstaben oder dem Unterstrich beginnen, darf nicht mit einer Zahl beginnen und darf nur alphanumerische Zeichen und Unterstriche enthalten (Az, 0-9 und _).<br>
+    <p>
+        <div id="phpbeispiel3"><img src="/images/Grundlagen/phpbeispiel3.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Globaler und Lokaler Geltungsbereich:</u></li><br>
+        -  Eine außerhalb einer Funktion deklarierte Variable hat einen GLOBAL SCOPE und kann nur außerhalb einer Funktion wie folgt aufgerufen werden:<br>
+        -  Eine Variable, die innerhalb einer Funktion deklariert wurde, hat ein LOKALES SCOPE und kann nur innerhalb dieser Funktion aufgerufen werden:<br>
+    <p>
+        <div id="phpbeispiel4"><img src="/images/Grundlagen/phpbeispiel4.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Das globale Schlüsselwort:</u></li><br>
+        - Wird verwendet, um innerhalb einer Funktion auf eine globale Variable zuzugreifen.<br>
+    <p>
+        <div id="phpbeispiel5"><img src="/images/Grundlagen/phpbeispiel5.jpg"></div>
+    <p>
+        - In PHP können alle globalen Variablen in einem Array namens $ GLOBALS [ index ] gespeichert werden.<br>
+        - Der Index enthält den Variablennamen.<br>
+        - Auf dieses Array kann auch innerhalb von Funktionen zugegriffen werden und es kann auch genutzt werden, um globale Variablen direkt zu aktualisieren.<br>
+    <p>
+        <div id="phpbeispiel6"><img src="/images/Grundlagen/phpbeispiel6.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>Das statische Schlüsselwort:</u></li><br>
+        - Wenn eine Funktion ausgeführt wird, werden im Normalfall alle ihre Variablen gelöscht.<br>
+        - Falls man will, dass eine lokale Variable nicht gelöscht wird, muss bei der ersten Variablendeklaration static verwendet werden.<br>
+    <p>
+        <div id="phpbeispiel7"><img src="/images/Grundlagen/phpbeispiel7.jpg"></div>
+    <p>
+        <li style="font-size: 20px"><u>echo und print Anweisungen:</u></li><br>
+        - echo und print sind gleich und geben Daten auf dem Bildschirm aus.<br>
+        - echo hat keinen Rückgabewert.<br>
+        - echo kann mehrere Parameter annehmen.<br>
+        - print hat einen Rückgabewert von 1 und kann in Ausdrücken verwendet werden.<br>
+    <p>
+        <li style="font-size: 20px"><u>Datentypen:</u></li><br>
+        - Variablen können Daten verschiedener Typen speichern.<br>
+        - var_dump () gibt den Datentyp und den Wert zurück.<br>
+        - PHP unterstützt folgenden Datentypen: Zeichenfolge, Ganze Zahl, Float, Boolesch, Array, Objekt, NULL.<br>
+        - Eine Zeichenfolge ist eine Folge von Zeichen wie "Hallo Welt!" oder 'Hallo Welt!'.<br>
+        - Ein ganzzahliger Datentyp ist eine nicht dezimale Zahl zwischen -2.147.483.648 und 2.147.483.647.<br>
+        - Eine Fließkommazahl ist eine Zahl mit einem Dezimalpunkt oder einer Zahl in Exponentialform.<br>
+        - Ein Boolescher Wert ist entweder true oder false.<br>
+        - Ein Objekt ist ein Datentyp, der Daten und Informationen zur Verarbeitung dieser Daten speichert.<br>
+        - Eine Variable vom Datentyp NULL ist eine Variable, der kein Wert zugewiesen ist.<br>
+    <p>
+        <li style="font-size: 20px"><u>Stringfunktionen:</u></li><br>
+        - Die Funktion strlen() gibt die Länge einer Zeichenfolge zurück. echo strlen ("Hello world!"); gibt 15 zurück.<br>
+        - Die Funktion str_word_count() zählt die Anzahl der Wörter in einer Zeichenfolge. echo str_word_count("Hello world!"); gibt 2 zurück.<br>
+        - Die Funktion strrev() kehrt eine Zeichenfolge um. echo strrev("Hello world!"); gibt !dlrow olleH zurück.<br>
+        - Die Funktion str_replace() ersetzt einige Zeichen durch andere Zeichen in einer Zeichenfolge. echo str_replace("world", "Dolly", "Hello world!"); gibt outputs Hello Dolly! zurück.<br>
+    <p>
+        <li style="font-size: 20px"><u>Konstanten:</u></li><br>
+        - Eine Konstante ist ein Bezeichner (Name) für einen einfachen Wert.<br>
+        - Ein gültiger Konstantenname beginnt mit einem Buchstaben oder Unterstrich (kein $ -Zeichen vor dem Konstantennamen).
+        - Konstanten sind im gesamten Skript automatisch global.<br>
+        - Die Funktion define() erstellt eine Konstante.<br>
+        - Syntax: define (name , value , case-insensitive).<br>
+    <p>
+        <li style="font-size: 20px"><u>Bedingte Anweisungen:</u></li><br>
+        - Die if-Anweisung führt einen Code aus, wenn eine Bedingung wahr ist.<br>
+        - Die if/else-Anweisung führt einen Code aus, wenn eine Bedingung wahr ist und einen anderen Code, wenn diese Bedingung falsch ist.<br>
+        - if/elseif/else-Anweisung führt unterschiedliche Codes für mehr als zwei Bedingungen aus.<br>
+        - Die switch-Anweisung wählt einen von vielen Code-Blöcken aus, die ausgeführt werden sollen.<br>
+    <p>
+        <li style="font-size: 20px"><u>Schleifen:</u></li><br>
+        - Werden verwendet, wenn derselbe Code immer wieder hintereinander ausgeführt werden soll.<br>
+        - while durchläuft einen Codeblock, solange die angegebene Bedingung wahr ist.<br>
+        - do/while durchläuft einmal einen Codeblock und wiederholt dann die Schleife, solange die angegebene Bedingung wahr ist.<br>
+        - for durchläuft eine bestimmte Anzahl durch einen Codeblock.<br>
+        - foreach durchläuft einen Codeblock für jedes Element in einem Array.<br>
+        <li style="font-size: 20px"><u>Arrays:</u></li><br>
+        - Ein Array speichert mehrere Werte in einer einzigen Variablen.<br>
+        - Ein Array kann viele Werte unter einem einzigen Namen enthalten und es kann auf die Werte zugegriffen werden, indem eine Indexnummer verwiesen wird.<br>
+        - Wenn eine Liste von Elementen vorhanden ist, sieht das Speichern der Elemente in einzelnen Variablen wie folgt aus: $color1 = "white"; $color2 = "black"; $color3 = "yellow";<br>
+    <p>
+        <li style="font-size: 20px"><u>Indizierte Arrays:</u></li><br>
+        - Der Index (fängt immer bei 0 an) kann automatisch wie folgt vergeben werden: $color = array("white", "black", "yellow");<br>
+        - Der Index kann manuell wie folgt vergeben werden: $color[1] = "white"; $color[2] = "black"; $color[3] = "yellow";<br>
+    <p>
+        <li style="font-size: 20px"><u>Assoziative Arrays:</u></li><br>
+        - Assoziative Arrays sind Arrays, die benannte Schlüssel verwenden, die ihnen zugewiesen werden.<br>
+        - Erste Variante um ein Assoziatives Array zu erstellen: $alter = array("Alessia"=>"25", "Emilia"=>"28", "Ben"=>"33");<br>
+        - Zweite Variante um ein Assoziatives Array zu erstellen: $alter['Alessia'] = "25"; $age['Emilia'] = "28"; $age['Ben'] = "33";<br>
+        </h4>
+        </ul>
+        </div>
+    </p>
+</article>

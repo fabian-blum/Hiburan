@@ -14,9 +14,13 @@ body {
     margin-bottom: 2em;
 }
 
-.body-content > hr {
-    margin-top: 2em;
-    margin-bottom: 1em;
+    .body-content > hr {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+.border-3 {
+    border-width: 3px !important;
 }
 
 /* Carousel */
@@ -41,4 +45,15 @@ body {
     .carousel-caption {
         display: none;
     }
+}
+
+/* Custom Section */
+
+.deko-verweis {
+    color: #fd7e14; /* Schriftfarbe */
+    font-weight: bold; /* Fett gedruckte Schrift */
+    text-decoration: underline; /* Fragen unterstrichen*/
+    padding-left: 80px; /* Innenabstand links */
+    cursor: pointer; /* Anstatt die Maus, erscheint ein Finger */
+    font-size: 20px;
 }
