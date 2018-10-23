@@ -8,10 +8,10 @@
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" class="navbar-text" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" class="navbar-text" title="Manage">Hallo @UserManager.GetUserName(User)!</a>
             </li>
             <li>
-                <button type="submit" class="btn btn btn-outline-light my-2 mx-3 my-sm-0">Logout</button>
+                <button type="submit" class="btn btn btn-outline-light my-2 mx-3 my-sm-0">Ausloggen</button>
             </li>
         </ul>
     </form>
@@ -19,7 +19,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="Identity" asp-page="/Account/Register" class="btn btn btn-outline-light my-2 mx-3 my-sm-0">Register</a></li>
-        <li><a asp-area="Identity" asp-page="/Account/Login" class="btn btn btn-outline-light my-2 mx-3 my-sm-0">Login</a></li>
+        <li><a asp-area="Identity" asp-page="/Account/Register" class="btn btn btn-outline-light my-2 mx-3 my-sm-0">Registrieren</a></li>
+        <li><a asp-area="Identity" asp-page="/Account/Login" class="btn btn btn-outline-light my-2 mx-3 my-sm-0">Einloggen</a></li>
     </ul>
 }

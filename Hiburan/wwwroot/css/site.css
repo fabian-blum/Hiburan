@@ -50,7 +50,7 @@ body {
 /* Custom Section */
 
 .deko-verweis {
-    font-weight: bold; /* Fett gedruckte Schrift */
     font-size: 20px;
     padding: 0.5em;
+    color: #fff;
 }
