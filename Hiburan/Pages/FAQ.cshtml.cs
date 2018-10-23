@@ -2,13 +2,13 @@
 
 namespace Hiburan.Pages
 {
-    public class FAQModel : PageModel
+    public class FaqModel : PageModel
     {
-        public string Message { get; set; }
+
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+
         }
     }
 }

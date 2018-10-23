@@ -1,9 +1,82 @@
 ﻿@page
-@model FAQModel
+@model FaqModel
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "FAQ";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@Model.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<h2>@ViewData["Title"]</h2>
+
+<h4 class="mt-lg-4 mb-lg-4">Willkommen im Frage- und Antwortbereich</h4>
+
+<p>Hier findest du mögliche Antworten auf deine Fragen.</p>
+<p>Falls du keine Antwort auf deine Frage finden solltest, dann kannst du gerne per <a asp-page="./Impressum">E-Mail Kontakt</a> aufnehmen</p>
+
+
+<article class="mt-lg-5">
+
+    <a href="javascript:aufklappen('question1')">1. Was ist die Idee hinter diesem Programmierquiz?</a>
+    <p>
+        <div id="question1" style="display: none">Da Kinder und Jugendliche einen Computer, Laptop, iPad, Tablet oder Smartphones besitzen, ist die Idee hinter diesem Programmierquiz, dass Kinder und Jugendliche sich frühzeitig mit Programmiersprachen beschäftigen.</div>
+    </p>
+    <a href="javascript:aufklappen('question2')">2. Woher kommt der Name Hiburan?</a>
+    <p>
+        <div id="question2" style="display: none">Der Name Hiburan kommt aus Indonesien und bedeutet übersetzt Unterhaltung oder Entertainment. Da Programmieren unterhaltsam sein soll, wurde dieser Name ausgewählt.</div>
+    </p>
+    <a href="javascript:aufklappen('question3')">3. Was ist Programmierung?</a>
+    <p>
+        <div id="question3" style="display: none"> Der Begriff Programmierung bezeichnet die Tätigkeit, Computerprogramme zu erstellen. Das ist ein Teilbereich der Softwareentwicklung und umfasst insbesondere die Implementierung des Softwareentwurfs in den Programmierquellcode einer Programmiersprache. Das Übersetzen dieses Programmierquellcodes in die Maschinensprache erfolgt unter der Nutzung eines Compilers. </div>
+    </p>
+    <a href="javascript:aufklappen('question4')">4. Was ist eine Programmiersprachen?</a>
+    <p>
+        <div id="question4" style="display: none">Eine Programmiersprachen ist eine formale Sprache, mit der sich Rechenvorschriften formulieren lassen. Diese Vorschriften können von einem Computer ausgeführt werden.</div>
+    </p>
+    <a href="javascript:aufklappen('question5')">5. Wie funktionieren die Quizspiele?</a>
+    <p>
+        <div id="question5" style="display: none">Das Quiz besteht aus einem Quiz für Anfänger, Fortgeschrittene und Profis. Es werden Fragen gestellt und die Spielerin oder der Spieler hat die Möglichkeit sich zwischen vier Antwortmöglichkeiten zu entscheiden. Am Ende des Quiz wird angezeigt wie viele Fragen richtig beantwortet wurden.</div>
+    </p>
+    <a href="javascript:aufklappen('question6')">6. Welchen Browser brauche ich?</a>
+    <p>
+        <div id="question6" style="display: none">Es kann Firefox, Chrome, Internet Explorer oder Safari verwenden werden.</div>
+    </p>
+    <a href="javascript:aufklappen('question7')">7. Ist die Nutzung von Hiburan kostenlos?</a>
+    <p>
+        <div id="question7" style="display: none">Die Nutzung von Hiburan ist kostenlos, da wir Kinder und Jugendliche unterstützen wollen.</div>
+    </p>
+    <a href="javascript:aufklappen('question8')">8. Welche Daten werden von mir gespeichert?</a>
+    <p>
+        <div id="question8" style="display: none">Es werden folgende Daten gespeichert: Nutzer-ID; Login Name, Passwort und E-Mail Adresse gespeichert. Diese Daten werden nicht an Dritte weitergegeben oder zur Ansicht verfügbar gemacht. Erhobene Daten werden ausschließlich für interne Zwecke und Auswertungen genutzt.</div>
+    </p>
+    <a href="javascript:aufklappen('question9')">9. Warum kann ich mich nicht registrieren?</a>
+    <p>
+        <div id="question9" style="display: none"> Wenn es Probleme bei der Registrierung gibt, dann besteht ein Fehler bei der Dateneingabe oder es gibt bereits einen Account mit diesem Benutzernamen oder dieser E-Mail Adresse. Falls beides nicht zutreffen sollte, dann kannst du dich an den Support wenden, damit geprüft werden kann, warum du dich nicht Registrieren kannst.</div>
+    </p>
+    <a href="javascript:aufklappen('question10')">10. Warum kann ich mich nicht anmelden?</a>
+    <p>
+        <div id="question10" style="display: none">Es gibt viele Gründe, weshalb du dich nicht anmelden kannst, deshalb solltest du zunächst überprüfen, ob dein Benutzername und dein Passwort korrekt sind. Wenn deine Zugangsdaten stimmen, dann solltest du dich an den Support wenden, um sicherzugehen, dass du nicht gesperrt wurdest. Es ist ebenfalls möglich, dass ein Konfigurationsproblem mit der Webseite vorliegt, welches ein Administrator lösen muss.</div>
+    </p>
+    <a href="javascript:aufklappen('question11')">11. Wann sollte man sich an den Support wenden?</a>
+    <p>
+        <div id="question11" style="display: none">An den Support kannst du dich wenden, wenn es Schwierigkeiten mit dem Registrieren oder Einloggen gibt, falls dein Account gesperrt wurde oder falls du ihn entgültig löschen willst, bei verbaler Belästigung und bei sonstigen Fragen. Bitte achte auf einen passenden Betreff und eine möglichst genaue Schilderung deines Anliegens.</div>
+    </p>
+    <a href="javascript:aufklappen('question12')">12. Ich möchte euch verlinken oder über euch schreiben, darf ich das?</a>
+    <p>
+        <div id="question12" style="display: none">Ja, es ist erlaubt uns zu verlinken oder über uns zu schreiben. Wir würden uns sehr darüber freuen, wenn unsere Spielerinnen und Spieler dies tun. Bitte setze einen Link auf den jeweiligen Beitrag oder Artikel. Das gilt auch für Portale wie das soziale Netzwerk Facebook, dem Mikroblogging-Dienst Twitter oder Foren.</div>
+    </p>
+
+</article>
+
+
+@section Scripts
+    {
+    <script>
+        function aufklappen(id) {
+            const element = document.getElementById(id);
+
+            if (element.style.display === "none") {
+                element.style.display = "";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+}

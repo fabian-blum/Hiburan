@@ -11,6 +11,12 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.body-content > hr {
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 /* Carousel */
