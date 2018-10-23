@@ -50,10 +50,7 @@ body {
 /* Custom Section */
 
 .deko-verweis {
-    color: #fd7e14; /* Schriftfarbe */
     font-weight: bold; /* Fett gedruckte Schrift */
-    text-decoration: underline; /* Fragen unterstrichen*/
-    padding-left: 80px; /* Innenabstand links */
-    cursor: pointer; /* Anstatt die Maus, erscheint ein Finger */
     font-size: 20px;
+    padding: 0.5em;
 }
