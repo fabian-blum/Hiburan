@@ -53,6 +53,12 @@ namespace Hiburan
                 options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Identity/Account/login";
+                options.LogoutPath = "/Identity/Account/logout";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
