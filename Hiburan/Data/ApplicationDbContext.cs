@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hiburan.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -17,11 +17,17 @@ namespace Hiburan.Data
         {
             base.OnModelCreating(builder);
 
+            // Quizes
+            #region Quiz
+
             builder.Entity<Quiz>().HasData(new Quiz() { Id = 1 });
 
             builder.Entity<Question>().HasData(
                 new { Id = 1, QuizId = 1 }
             );
+
+            #endregion
+
         }
     }
 }

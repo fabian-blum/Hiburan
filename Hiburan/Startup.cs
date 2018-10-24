@@ -1,4 +1,5 @@
 using Hiburan.Data;
+using Hiburan.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +35,7 @@ namespace Hiburan
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = false;
                     options.Password.RequireUppercase = false;
@@ -88,6 +89,9 @@ namespace Hiburan
             app.UseAuthentication();
 
             app.UseMvc();
+
+            // Seed Roles
+            SeedRoles.Initialize(app.ApplicationServices);
         }
     }
 }

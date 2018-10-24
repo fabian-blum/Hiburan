@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hiburan.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181022211145_quizAdded")]
-    partial class quizAdded
+    [Migration("20181024174449_QuizProgresses")]
+    partial class QuizProgresses
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,10 @@ namespace Hiburan.Data.Migrations
                     b.HasIndex("QuizId");
 
                     b.ToTable("Question");
+
+                    b.HasData(
+                        new { Id = 1, QuizId = 1 }
+                    );
                 });
 
             modelBuilder.Entity("Hiburan.Models.Quiz", b =>
@@ -45,6 +49,10 @@ namespace Hiburan.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Quizzes");
+
+                    b.HasData(
+                        new { Id = 1 }
+                    );
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -164,11 +172,9 @@ namespace Hiburan.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.ApplicationUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider")
-                        .HasMaxLength(128);
+                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("ProviderKey")
-                        .HasMaxLength(128);
+                    b.Property<string>("ProviderKey");
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -199,11 +205,9 @@ namespace Hiburan.Data.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider")
-                        .HasMaxLength(128);
+                    b.Property<string>("LoginProvider");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(128);
+                    b.Property<string>("Name");
 
                     b.Property<string>("Value");
 
