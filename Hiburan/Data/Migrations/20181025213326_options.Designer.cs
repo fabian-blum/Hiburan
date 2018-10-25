@@ -4,14 +4,16 @@ using Hiburan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Hiburan.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181025213326_options")]
+    partial class options
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,7 +118,7 @@ namespace Hiburan.Data.Migrations
                     b.ToTable("Question");
 
                     b.HasData(
-                        new { Id = 1, CorrectOptionId = 1, ImagePath = "https://smartybro.com/wp-content/uploads/2018/03/Aprende-a-crear-p%C3%A1ginas-web-con-HTML5-y-CSS3.jpg", Position = 1, QuizId = 1, Text = "Was bedeutet die Abkürzung CSS?" }
+                        new { Id = 1, ImagePath = "https://smartybro.com/wp-content/uploads/2018/03/Aprende-a-crear-p%C3%A1ginas-web-con-HTML5-y-CSS3.jpg", Position = 1, QuizId = 1, Text = "Was bedeutet die Abkürzung CSS?" }
                     );
                 });
 
