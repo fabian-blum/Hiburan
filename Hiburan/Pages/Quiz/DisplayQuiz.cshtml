@@ -8,5 +8,5 @@
 
 
 <p>
-    <vc:Quiz question="@Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position]"></vc:Quiz>
+    @await Component.InvokeAsync("Quiz", Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position])
 </p>
