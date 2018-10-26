@@ -1,0 +1,12 @@
+﻿@page
+@model DisplayQuizModel
+@{
+    ViewData["Title"] = "Quiz";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+<p>
+    @await Component.InvokeAsync("Quiz", new Question() { Text = "BlaBlaBla" })
+</p>

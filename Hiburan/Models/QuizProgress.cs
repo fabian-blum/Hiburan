@@ -10,5 +10,6 @@ namespace Hiburan.Models
 
         public Quiz Quiz { get; set; }
         public bool InProgress { get; set; }
+        public int Position { get; set; }
     }
 }
