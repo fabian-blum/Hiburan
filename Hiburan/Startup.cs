@@ -98,6 +98,7 @@ namespace Hiburan
 
             // Seed Roles
             SeedRoles.Initialize(app.ApplicationServices);
+            SeedData.SeedFortgeschrittenenQuiz(dbContext);
         }
     }
 }

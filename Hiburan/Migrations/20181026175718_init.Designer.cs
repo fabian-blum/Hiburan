@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Hiburan.Data.Migrations
+namespace Hiburan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181025213857_optionsCorrectFix")]
-    partial class optionsCorrectFix
+    [Migration("20181026175718_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,11 +86,7 @@ namespace Hiburan.Data.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("Option");
-
-                    b.HasData(
-                        new { Id = 1, OptionText = "Cool Style Sheets", QuestionId = 1 }
-                    );
+                    b.ToTable("Options");
                 });
 
             modelBuilder.Entity("Hiburan.Models.Question", b =>
@@ -98,6 +94,8 @@ namespace Hiburan.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AnswerText");
 
                     b.Property<int?>("CorrectOptionId");
 
@@ -115,11 +113,7 @@ namespace Hiburan.Data.Migrations
 
                     b.HasIndex("QuizId");
 
-                    b.ToTable("Question");
-
-                    b.HasData(
-                        new { Id = 1, CorrectOptionId = 1, ImagePath = "https://smartybro.com/wp-content/uploads/2018/03/Aprende-a-crear-p%C3%A1ginas-web-con-HTML5-y-CSS3.jpg", Position = 1, QuizId = 1, Text = "Was bedeutet die Abkürzung CSS?" }
-                    );
+                    b.ToTable("Questions");
                 });
 
             modelBuilder.Entity("Hiburan.Models.Quiz", b =>
@@ -133,10 +127,6 @@ namespace Hiburan.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Quizzes");
-
-                    b.HasData(
-                        new { Id = 1, Title = "Fortgeschritten" }
-                    );
                 });
 
             modelBuilder.Entity("Hiburan.Models.QuizProgress", b =>

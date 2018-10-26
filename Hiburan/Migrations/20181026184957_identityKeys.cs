@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Hiburan.Data.Migrations
+namespace Hiburan.Migrations
 {
-    public partial class optionsCorrectOrder : Migration
+    public partial class identityKeys : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
