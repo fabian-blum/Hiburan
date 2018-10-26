@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hiburan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181026205734_init")]
+    [Migration("20181026220332_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -4,9 +4,9 @@
     ViewData["Title"] = "Quiz";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2>@ViewData["Title"] - @Model.QuizProgress.Quiz.Title</h2>
 
 
 <p>
-    @await Component.InvokeAsync("Quiz", new Question() { Text = "BlaBlaBla" })
+    <vc:Quiz question="@Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position]"></vc:Quiz>
 </p>

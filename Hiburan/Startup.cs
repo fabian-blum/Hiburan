@@ -42,8 +42,9 @@ namespace Hiburan
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseLazyLoadingProxies()
+                    .UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
 
             services.AddDefaultIdentity<ApplicationUser>(options =>
                 {

@@ -5,6 +5,6 @@ namespace Hiburan.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public List<QuizProgress> QuizProgresses { get; set; }
+        public virtual List<QuizProgress> QuizProgresses { get; set; } = new List<QuizProgress>();
     }
 }

@@ -26,17 +26,23 @@ namespace Hiburan.Pages.Quiz
         private ApplicationDbContext ApplicationDbContext { get; }
         public UserManager<ApplicationUser> UserManager { get; set; }
 
+
+        [BindProperty]
         public QuizProgress QuizProgress { get; set; }
 
-
-
-        public async Task<IActionResult> OnGet(string quizname, int position = 0)
+        public async Task<IActionResult> OnGet(string quizname)
         {
+            await LoadQuiz(quizname);
 
+            return Page();
+        }
+
+        private async Task LoadQuiz(string quizname)
+        {
             var quiz = await ApplicationDbContext.Quizzes.FirstOrDefaultAsync(x => x.Title == quizname);
 
             var user = await UserManager.GetUserAsync(User);
-            QuizProgress = user.QuizProgresses.FirstOrDefault(x => x.Quiz.Id == quiz.Id);
+            QuizProgress = user.QuizProgresses.FirstOrDefault(x => x.Quiz.Id == quiz?.Id);
             if (QuizProgress == null)
             {
                 QuizProgress = new QuizProgress
@@ -47,9 +53,6 @@ namespace Hiburan.Pages.Quiz
                 user.QuizProgresses.Add(QuizProgress);
                 await UserManager.UpdateAsync(user);
             }
-            //Quiz = ApplicationDbContext.Quizzes.FirstOrDefault(x => x.Title == quizname);
-
-            return Page();
         }
     }
 }
