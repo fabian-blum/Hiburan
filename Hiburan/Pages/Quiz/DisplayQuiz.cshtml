@@ -13,47 +13,74 @@
         Frage @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Position von @Model.QuizProgress.Quiz.Questions.Count
     </h4>
 
-    <h3 class="m-3">
-        Frage @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Position: @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Text
-    </h3>
+    @if (Model.QuizProgress.Finished)
+    {
+        <h3 class="text-success">Sie haben das Quiz erfolgreich abgeschlossen!</h3>
+    }
+    else
+    {
+        <h3 class="m-3">
+            Frage @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Position
+            : @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Text
+        </h3>
 
-    <img class="m-3 img-fluid img-thumbnail" src="@Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].ImagePath" />
+        <img class="m-3 img-fluid img-thumbnail" src="@Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].ImagePath" />
 
-    <h4 class="m-3">
-        @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].AnswerText
-    </h4>
+        if (Model.Success.HasValue && Model.Success.Value == false)
+        {
+            <h4 class="m-3">
+                @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].AnswerText
+            </h4>
+        }
 
-    <h3 class="m-3">
-        @Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].CorrectOption.Id
-    </h3>
+        <hr class="m-4" />
 
-
-
-    <hr class="m-4" />
-
-    <div class="row">
-        <div class="col-md-8 offset-md-2 border border-primary rounded p-4 pt-5">
-            <form method="post">
-                @foreach (var o in Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Options.OrderBy(x => x.Id))
-                {
-                    <p>
-                        @if (Model.SelectedItem == o.Id)
-                        {
-                            <button type="submit" class="btn btn-success btn-block" asp-page-handler="Select" asp-route-id="@o.Id">@o.OptionText</button>
-                        }
-                        else
-                        {
-                            <button type="submit" class="btn btn-primary btn-block" asp-page-handler="Select" asp-route-id="@o.Id">@o.OptionText</button>
-                        }
-                    </p>
-                }
-            </form>
+        <div class="row">
+            <div class="col-md-8 offset-md-2 border border-primary rounded p-4 pt-5">
+                <form method="post">
+                    @foreach (var o in Model.QuizProgress.Quiz.Questions[Model.QuizProgress.Position].Options.OrderBy(x => x.Id))
+                    {
+                        <p>
+                            @if (Model.Success != null && (Model.SelectedItem == o.Id && Model.Success.Value))
+                            {
+                                <button type="submit" class="btn btn-success btn-block"
+                                        asp-page-handler="Select" asp-route-selectedId="@o.Id">
+                                    @o.OptionText
+                                </button>
+                            }
+                            else if (Model.Success != null && (Model.SelectedItem == o.Id && !Model.Success.Value))
+                            {
+                                <button type="submit" class="btn btn-danger btn-block"
+                                        asp-page-handler="Select" asp-route-selectedId="@o.Id">
+                                    @o.OptionText
+                                </button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-primary btn-block"
+                                        asp-page-handler="Select" asp-route-selectedId="@o.Id">
+                                    @o.OptionText
+                                </button>
+                            }
+                        </p>
+                    }
+                </form>
+            </div>
         </div>
-    </div>
 
+        <div class="row">
+            <div class="col-md-6 offset-md-3 p-4 pt-5">
+                <form method="post">
+                    <button type="submit" class="btn btn-primary btn-block"
+                            asp-page-handler="NextQuestion"
+                            disabled="@(!(Model.Success != null && Model.Success.Value))">
+                        Nächste Frage
+                    </button>
+                </form>
+            </div>
+        </div>
 
-
-
+    }
 
     @section Scripts
         {

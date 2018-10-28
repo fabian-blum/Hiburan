@@ -28,13 +28,21 @@ namespace Hiburan.Pages.Quiz
         private ApplicationDbContext ApplicationDbContext { get; }
         private UserManager<ApplicationUser> UserManager { get; set; }
 
+
         public QuizProgress QuizProgress { get; set; }
 
-        [BindProperty]
+        [TempData]
+        public bool? Success { get; set; }
+
         public int SelectedItem { get; set; } = -1;
 
         public async Task<IActionResult> OnGetAsync(int quizId)
         {
+            if (quizId == 0)
+            {
+                return RedirectToPage("/Error", "Message", new { message = "Dieses Quiz gibt es nicht" });
+            }
+
             await LoadQuiz(quizId);
 
             HttpContext.Session.Set("QuizProgress", QuizProgress);
@@ -42,32 +50,39 @@ namespace Hiburan.Pages.Quiz
             return Page();
         }
 
-        public async Task<IActionResult> OnPostSelectAsync(int id)
+        public IActionResult OnPostSelect(int selectedId)
         {
             QuizProgress = HttpContext.Session.Get<QuizProgress>("QuizProgress");
 
-            //var contact = await _db.Customers.FindAsync(id);
+            SelectedItem = selectedId;
 
-            //if (contact != null)
-            //{
-            //    _db.Customers.Remove(contact);
-            //    await _db.SaveChangesAsync();
-            //}
+            Success = selectedId == QuizProgress.Quiz.Questions[QuizProgress.Position].CorrectOptionId;
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostNextQuestionAsync(int id)
+        public async Task<IActionResult> OnPostNextQuestionAsync()
         {
-            //var contact = await _db.Customers.FindAsync(id);
+            QuizProgress = HttpContext.Session.Get<QuizProgress>("QuizProgress");
 
-            //if (contact != null)
-            //{
-            //    _db.Customers.Remove(contact);
-            //    await _db.SaveChangesAsync();
-            //}
+            var user = await UserManager.GetUserAsync(User);
+            QuizProgress = user.QuizProgresses.FirstOrDefault(x => x.Quiz.Id == QuizProgress?.Quiz?.Id);
 
-            return Page();
+            if (QuizProgress != null && QuizProgress.Quiz.Questions.Count - 1 > QuizProgress.Position)
+            {
+                QuizProgress.Position++;
+            }
+            else if (QuizProgress != null && Success.HasValue && Success.Value)
+            {
+                QuizProgress.Finished = true;
+            }
+
+            await UserManager.UpdateAsync(user);
+
+            return QuizProgress != null ?
+                 RedirectToPage("/Quiz/DisplayQuiz", new { quizId = QuizProgress.Quiz.Id })
+                 : RedirectToPage("/Quiz/DisplayQuiz");
+
         }
 
         private async Task LoadQuiz(int quizId)
@@ -80,7 +95,7 @@ namespace Hiburan.Pages.Quiz
             {
                 QuizProgress = new QuizProgress
                 {
-                    InProgress = true,
+                    Finished = false,
                     Quiz = quiz
                 };
                 user.QuizProgresses.Add(QuizProgress);
