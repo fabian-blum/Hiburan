@@ -36,12 +36,16 @@ namespace Hiburan.Pages.Quiz
 
         public int SelectedItem { get; set; } = -1;
 
+        // HTTP Methods
+
         public async Task<IActionResult> OnGetAsync(int quizId)
         {
             if (quizId == 0)
             {
                 return RedirectToPage("/Error", "Message", new { message = "Dieses Quiz gibt es nicht" });
             }
+
+            Success = null;
 
             await LoadQuiz(quizId);
 
@@ -84,6 +88,8 @@ namespace Hiburan.Pages.Quiz
                  : RedirectToPage("/Quiz/DisplayQuiz");
 
         }
+
+        // Private Methods
 
         private async Task LoadQuiz(int quizId)
         {
