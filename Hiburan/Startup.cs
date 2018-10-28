@@ -37,9 +37,11 @@ namespace Hiburan
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddDistributedMemoryCache();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseLazyLoadingProxies()
@@ -57,14 +59,21 @@ namespace Hiburan
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().AddRazorPagesOptions(options =>
+            services.AddMvc()
+                .AddSessionStateTempDataProvider()
+                .AddRazorPagesOptions(options =>
             {
                 options.RootDirectory = "/Pages";
                 options.AllowAreas = true;
                 options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
                 options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
 
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -105,6 +114,8 @@ namespace Hiburan
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            app.UseSession();
 
             app.UseMvc();
 

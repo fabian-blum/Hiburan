@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "wwwroot/js/quiz.min.js",
+    "inputFiles": [
+      "wwwroot/js/quiz.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ]
+  }
+]

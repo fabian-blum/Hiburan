@@ -1,6 +1,8 @@
 using Hiburan.Data;
+using Hiburan.Extensions;
 using Hiburan.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -24,22 +26,53 @@ namespace Hiburan.Pages.Quiz
         }
 
         private ApplicationDbContext ApplicationDbContext { get; }
-        public UserManager<ApplicationUser> UserManager { get; set; }
+        private UserManager<ApplicationUser> UserManager { get; set; }
 
-
-        [BindProperty]
         public QuizProgress QuizProgress { get; set; }
 
-        public async Task<IActionResult> OnGet(string quizname)
+        [BindProperty]
+        public int SelectedItem { get; set; } = -1;
+
+        public async Task<IActionResult> OnGetAsync(int quizId)
         {
-            await LoadQuiz(quizname);
+            await LoadQuiz(quizId);
+
+            HttpContext.Session.Set("QuizProgress", QuizProgress);
 
             return Page();
         }
 
-        private async Task LoadQuiz(string quizname)
+        public async Task<IActionResult> OnPostSelectAsync(int id)
         {
-            var quiz = await ApplicationDbContext.Quizzes.FirstOrDefaultAsync(x => x.Title == quizname);
+            QuizProgress = HttpContext.Session.Get<QuizProgress>("QuizProgress");
+
+            //var contact = await _db.Customers.FindAsync(id);
+
+            //if (contact != null)
+            //{
+            //    _db.Customers.Remove(contact);
+            //    await _db.SaveChangesAsync();
+            //}
+
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostNextQuestionAsync(int id)
+        {
+            //var contact = await _db.Customers.FindAsync(id);
+
+            //if (contact != null)
+            //{
+            //    _db.Customers.Remove(contact);
+            //    await _db.SaveChangesAsync();
+            //}
+
+            return Page();
+        }
+
+        private async Task LoadQuiz(int quizId)
+        {
+            var quiz = await ApplicationDbContext.Quizzes.FirstOrDefaultAsync(x => x.Id == quizId);
 
             var user = await UserManager.GetUserAsync(User);
             QuizProgress = user.QuizProgresses.FirstOrDefault(x => x.Quiz.Id == quiz?.Id);
